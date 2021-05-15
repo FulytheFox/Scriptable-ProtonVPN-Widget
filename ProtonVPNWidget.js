@@ -10,11 +10,11 @@ let themeMode;
 let textColor;
 
 if (Device.isUsingDarkAppearance()) {
-    themeMode = 'light';
-    textColor = '1E1E1E';
-} else {
     themeMode = 'dark';
     textColor = 'EDEDED';
+} else {
+    themeMode = 'light';
+    textColor = '1E1E1E';
 }
 
 // ----- ASSETS-DOWNLOAD ----- //
@@ -28,7 +28,7 @@ if (!fm.fileExists(pathFolder)) {
 }
 
 async function getBG() {
-  const pathBG = fm.joinPath(fm.documentsDirectory(), 'bg_' + themeMode + '.jpg');
+  const pathBG = fm.joinPath(pathFolder, 'bg_' + themeMode + '.jpg');
   
   if (fm.fileExists(pathBG)) {
     return fm.readImage(pathBG)

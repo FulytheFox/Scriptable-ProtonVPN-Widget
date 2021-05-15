@@ -20,7 +20,7 @@ if (Device.isUsingDarkAppearance()) {
 // ----- ASSETS-DOWNLOAD ----- //
 
 let fm = FileManager.iCloud();
-const pathFolder = fm.joinPath(fm.documentDirectory(), 'protonVPN');
+const pathFolder = fm.joinPath(fm.documentsDirectory(), 'protonVPN');
 
 if (!fm.fileExists(pathFolder)) {
   fm.createDirectory(pathFolder)
@@ -28,7 +28,7 @@ if (!fm.fileExists(pathFolder)) {
 }
 
 async function getBG() {
-  const pathBG = fm.joinPath(fm.documentDirectory(), 'bg_' + themeMode + '.jpg');
+  const pathBG = fm.joinPath(fm.documentsDirectory(), 'bg_' + themeMode + '.jpg');
   
   if (fm.fileExists(pathBG)) {
     return fm.readImage(pathBG)

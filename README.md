@@ -18,7 +18,7 @@ For the script to work you need a device with iOS 14 or higher and the [Scriptab
 
 ## Installation
 
-1. Copy all the code from the file [ProtonVPN_Status.js](https://github.com/FulytheFox/Scriptable-ProtonVPN-Widget/ProtonVPN_Status.js) which is located in the repository.
+1. Copy all the code from the file [ProtonVPN_Status.js](https://github.com/FulytheFox/Scriptable-ProtonVPN-Widget/blob/main/ProtonVPN_Status.js) which is located in the repository.
 2. Open Scriptable and tap on `+` in the top right corner.
 5. Paste the copied code.
 6. If you wish you can now configure `hideIP` and `useiCloud` at the very top of the script. If you want you can also change the colors in the script. Tap `Done`.

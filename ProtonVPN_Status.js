@@ -124,10 +124,10 @@ async function getIP(v) {
 }
 
 async function getCountryName(code) {
-  let code = code == 'GB' ? 'UK' : code;
+  let countryCode = code == 'GB' ? 'UK' : code;
   
   try {
-    let req = new Request('https://restcountries.eu/rest/v2/alpha/' + code)
+    let req = new Request('https://restcountries.eu/rest/v2/alpha/' + countryCode)
     let data = await req.loadJSON()
     let name = data.name
     console.log('Server Country: ' + name)

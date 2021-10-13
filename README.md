@@ -28,7 +28,7 @@ For the script to work you need a device with iOS 14 or higher and the [Scriptab
 
 ### APIs used for this project:
 * [ProtonVPN-API](https://api.protonvpn.ch/vpn/logicals)
-* [REST Countries](https://restcountries.eu/)
+* [REST Countries](https://restcountries.com/)
 
 ### Logos used for this project:
 

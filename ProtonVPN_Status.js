@@ -127,9 +127,9 @@ async function getCountryName(code) {
   let countryCode = code == 'GB' ? 'UK' : code;
   
   try {
-    let req = new Request('https://restcountries.eu/rest/v2/alpha/' + countryCode)
+    let req = new Request('https://restcountries.com/v3.1/alpha/' + countryCode + '?fields=name')
     let data = await req.loadJSON()
-    let name = data.name
+    let name = data.name.common
     console.log('Server Country: ' + name)
     return name
   } catch (error) {

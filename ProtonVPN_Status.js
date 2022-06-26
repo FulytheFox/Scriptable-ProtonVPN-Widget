@@ -106,10 +106,10 @@ async function getFlag() {
 // ----- GET-SERVER-DATA ----- //
 async function getIP(v) {
   try {
-    let req = new Request('https://api.protonvpn.ch/vpn/location')
-    let data = await req.loadJSON()
-    let ip = data.IP
-    let country = data.Country
+    let req = await new Request('https://cloudflare.com/cdn-cgi/trace').loadString()
+    let data = await Object.fromEntries(req.trim().split('\n').map(e=>e.split('=')))
+    let ip = data.ip
+    let country = data.loc
 
     if (v == 'country') {
       console.log('Client Country: ' + country)
@@ -119,7 +119,7 @@ async function getIP(v) {
     console.log('Client IP: ' + ip)
     return ip
   } catch (error) {
-    throw new Error('An error occurred when loading your IP-Address from the ProtonVPN API. Please check your Internet Connection.')
+    throw new Error('An error occurred when loading your ip address from the CloudFlare Trace API. Please check your internet connection.')
   }
 }
 
@@ -133,7 +133,7 @@ async function getCountryName(code) {
     console.log('Server Country: ' + name)
     return name
   } catch (error) {
-    throw new Error('An error occurred when loading Countrynames from the Restcountries API. Please check your Internet Connection.')
+    throw new Error('An error occurred when loading country names from the Restcountries API. Please check your internet connection.')
   }
 }
 
@@ -164,7 +164,7 @@ async function getServerData() {
       }
     }
   } catch (error) {
-    throw new Error('An error occurred when loading data from the ProtonVPN API. Please check your Internet Connection.\n' + error)
+    throw new Error('An error occurred when loading data from the ProtonVPN API. Please check your internet connection.\n' + error)
   }
 }
 
